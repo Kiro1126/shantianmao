@@ -1983,8 +1983,8 @@
 
                     const messages = recordToArray(record).map(m => {
                         let senderAvatar = null;
-                        const isUser = m.发送者 === '山田茂' || m.发送者 === '{{山田茂}}';
-                        if (isUser) {
+                        const is山田茂 = m.发送者 === '山田茂' || m.发送者 === '{{山田茂}}';
+                        if (is山田茂) {
                             senderAvatar = userAvatar;
                         } else {
                             const foundChar = Object.values(CHARACTER_CONFIG).find(c => c.name === m.发送者 || c.fullName.includes(m.发送者) || (c.id === 'AYANE' && m.发送者 === '林绛'));
@@ -1993,7 +1993,7 @@
                         return {
                             key: m.key,
                             type: m.类型,
-                            side: isUser ? 'right' : 'left',
+                            side: is山田茂 ? 'right' : 'left',
                             content: m.文字内容,
                             time: m.key.split(' ')[1]?.split('_')[0] || '00:00',
                             sender: m.发送者,
